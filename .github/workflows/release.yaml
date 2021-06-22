@@ -52,7 +52,7 @@ jobs:
     - name: Dist
       if: matrix.os == 'ubuntu-latest' && github.ref == 'refs/heads/release'
       run: |
-        sudo apt install libssl-dev pkg-config
+        sudo apt-get update && sudo apt-get install -y libssl-dev pkg-config
         cargo xtask dist --client --version 0.2.$GITHUB_RUN_NUMBER --tag $(date --iso --utc)
 
     - name: Dist
