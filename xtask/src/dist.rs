@@ -54,7 +54,7 @@ fn dist_server() -> Result<()> {
     if cfg!(target_os = "linux") {
         std::env::set_var("CC", "clang");
         run!(
-            "cargo build --manifest-path ./Cargo.toml --bin clarity-lsp --release
+            "cargo build --manifest-path ./Cargo.toml --locked --bin clarity-lsp --release
              --target x86_64-unknown-linux-musl
             "
             // We'd want to add, but that requires setting the right linker somehow
@@ -62,7 +62,7 @@ fn dist_server() -> Result<()> {
         )?;
         run!("strip ./target/x86_64-unknown-linux-musl/release/clarity-lsp")?;
     } else {
-        run!("cargo build --manifest-path ./Cargo.toml --bin clarity-lsp --release")?;
+        run!("cargo build --manifest-path ./Cargo.toml --locked --bin clarity-lsp --release")?;
     }
 
     let (src, dst) = if cfg!(target_os = "linux") {
