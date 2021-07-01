@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["clarity_lsp"] = [{"text":"impl LanguageServer for <a class=\"struct\" href=\"clarity_lsp/clarity_language_backend/struct.ClarityLanguageBackend.html\" title=\"struct clarity_lsp::clarity_language_backend::ClarityLanguageBackend\">ClarityLanguageBackend</a>","synthetic":false,"types":["clarity_lsp::clarity_language_backend::ClarityLanguageBackend"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
